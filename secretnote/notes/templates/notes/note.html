@@ -1,12 +1,17 @@
 {% block title%}
-    Notes
+    Our secret note is
 {%endblock%}
 
 {%block content%}
     <section>
-        {{note}}
-        <h2> {{ note.title }} </h2>
-        <p> {{ note.content }} </p>
-        <p> {{ note.id }} </p>
+        {% if data != "" %}
+            <h2> {{ note.title }} </h2>
+            <p> {{ note.content }} </p>
+            <p> Note was created on {{ note.creation_date}} <br>
+                Note expires an hour after creation 
+            </p>
+        {%else%}
+            <p>  Note has Expired</p>
+        {% endif %}
     </section>
 {%endblock%}

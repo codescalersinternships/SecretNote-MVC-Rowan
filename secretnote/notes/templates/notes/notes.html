@@ -5,15 +5,13 @@
 {%block content%}
     <section>
         <h2> NOTES </h2>
+        <ul>
         {% for note in notes %}
-            <article>
-                {% comment %} <a href="http://127.0.0.1:8000/"> {% endcomment %}
+            <li>
                 <h3> {{ note.title }} </h3>
-                <p> {{ note.content }} </p>
-                <p> {{ note.id }} </p>
-                {% comment %} e0cd5117-d575-4a09-a1d3-290adaf85ea7 {% endcomment %}
-            </article>
+                <a href="{{note.id }}"> Note Link</a>
+            </li>
         {% endfor%}
-
+        </ul>
     </section>
 {%endblock%}

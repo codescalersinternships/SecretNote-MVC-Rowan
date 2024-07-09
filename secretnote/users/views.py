@@ -7,7 +7,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            redirect('notes:note')
+            redirect("notes:note")
     else:
         form = UserCreationForm()
-    return render(request, "users/register.html",{'form': form})
+    return render(request, "users/register.html", {"form": form})
