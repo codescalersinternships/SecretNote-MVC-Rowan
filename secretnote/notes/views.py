@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Note
+
+def notes(request):
+    notes_list = Note.objects.all().order_by('-creation_date')
+    return render(request,'notes/notes.html',{'notes': notes_list})
+
