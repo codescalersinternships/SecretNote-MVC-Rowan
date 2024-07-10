@@ -1,17 +1,24 @@
 {% block title%}
-    Our secret note is
+    <h2>
+    Rowan's Advanced Security Notes System ᕙ(  •̀ ᗜ •́  )ᕗ
+    </h2>
 {%endblock%}
 
 {%block content%}
     <section>
-        {% if data != "" %}
+        {% if note != "" %}
+            <h1> Our not-so-secret-anymore-note is </h1>
             <h2> {{ note.title }} </h2>
             <p> {{ note.content }} </p>
             <p> Note was created on {{ note.creation_date}} <br>
                 Note expires an hour after creation 
             </p>
         {%else%}
-            <p>  Note has Expired</p>
+        <br>
+        <h3> Note expired !</h3>
+        <p> Note was created on <b>{{ date}} </b> <br>
+            Accessing date now is<b> {{current_date}} </b>
+        </p>
         {% endif %}
     </section>
 {%endblock%}
