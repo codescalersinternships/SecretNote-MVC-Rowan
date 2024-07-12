@@ -8,6 +8,7 @@
     <section>
         {% if note != "" %}
             <h1> Our not-so-secret-anymore-note is </h1>
+            <h3>Hello Visitor Number {{note.view_count}} </h3>
             <h2> {{ note.title }} </h2>
             <p> {{ note.content }} </p>
             <p> Note was created on {{ note.creation_date}} <br>
