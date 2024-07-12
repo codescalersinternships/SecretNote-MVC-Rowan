@@ -4,17 +4,13 @@ from .models import Note
 from datetime import datetime
 
 
-# @login_required
 def notes(request):
     notes_list = Note.objects.all().order_by("-creation_date")
     return render(request, "notes/notes.html", {"notes": notes_list})
 
 
-# @login_required
 def note(request, note_id):
     note = get_object_or_404(Note, pk=note_id)
-    # print(datetime.now().day)
-    # print(note.creation_date)
     note.view_count = note.view_count + 1
     print(note.view_count)
     note.save()
