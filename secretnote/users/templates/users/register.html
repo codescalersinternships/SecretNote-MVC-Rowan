@@ -1,0 +1,12 @@
+{% comment %} {% block title %}
+    Register a New User
+{% endblock %} {% endcomment %}
+
+{% block content %}
+    <h1>Register a New User</h1>
+    <form action="/users/register/" method="post">
+        {% csrf_token %} {% comment %} or else django throws an error here {% endcomment %}
+        {{ form }}
+        <button>Submit</button>
+    </form>
+{% endblock %}
